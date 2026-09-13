@@ -4,30 +4,37 @@ import "fmt"
 
 func main() {
 
-	idades := make(map[string]int) // declaração
-	idades["Pedro"] = 25
-	idades["Teo"] = 33
+	ages := make(map[string]int) // declaration with make
+	// We can let Go know the expected length of the array or map for efficiency. 
+	// To do that, we just pass the size argument for the make() function.
 
-	fmt.Println("Idades:", idades)
+	ages["Pedro"] = 25
+	ages["Teo"] = 33
 
-	alturas := map[string]float64{} // declaração mais comum
-	alturas["Pedro"] = 1.76
-	fmt.Println("Alturas:", alturas)
+	fmt.Println("Ages:", ages)
 
-	alturas["Teo"] = 1.82
-	alturaTeo, ok := alturas["Teo"]
+	heights := map[string]float64{} // most common declaration
+	fmt.Println("Len:", len(heights))
+	// Unlike slices,
+	// We can do:
+	heights["Pedro"] = 1.76
+	// for that type of declaration
+	fmt.Println("Heights:", heights)
+
+	heights["Teo"] = 1.82
+	heightTeo, ok := heights["Teo"]
 	if ok {
-		fmt.Println("Altura Teo:", alturaTeo, "ok:", ok)
+		fmt.Println("Height Teo:", heightTeo, "ok:", ok)
 	} else {
-		fmt.Println("Não encontrei")
+		fmt.Println("I didn't find it.")
 	}
 
-	// Ou podemos fazer da forma a seguir:
-	if alturaTeo, ok := alturas["Teo"]; ok {
-		fmt.Println("Altura Teo:", alturaTeo)
+	// We can do it like this:
+	if heightTeo, ok := heights["Teo"]; ok {
+		fmt.Println("Height Teo:", heightTeo)
 	} else {
-		fmt.Println("Não encontrei")
+		fmt.Println("I didn't find it.")
 	}
-	// Aqui, alturaTeo e ok existem apenas dentro da estrutura condicional
+	// Here, heightTeo and ok exists only within the conditional structure
 
 }
