@@ -13,8 +13,8 @@ func main() {
 	tripled := transformNumbers(&numbers, triple)
 	// Using Anonymous Function:
 	tripled_anonymous := transformNumbers(&numbers, func(number int) int {
-		return number*3
-	}) 
+		return number * 3
+	})
 
 	fmt.Println(doubled)
 	fmt.Println(tripled)

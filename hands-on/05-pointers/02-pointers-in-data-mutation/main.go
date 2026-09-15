@@ -1,4 +1,4 @@
-// Here we are directly mutating the pointer's value instead of 
+// Here we are directly mutating the pointer's value instead of
 // just using the value in the function to avoid unnecessary copies
 
 package main

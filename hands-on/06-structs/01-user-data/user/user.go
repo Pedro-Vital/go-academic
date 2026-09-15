@@ -14,7 +14,7 @@ type User struct { // Uppercase to export the User identifier (use it in other p
 	createdAt time.Time
 }
 
-// User is a value type, their instances are values 
+// User is a value type, their instances are values
 
 type Admin struct {
 	email    string
@@ -29,7 +29,7 @@ func (u User) OutputUserDetails() {
 	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
 
-/* 
+/*
 We could seamlessly override the OutputUserDetails() method for the admin.
 Even though they have the same method name, this is allowed because methods are identified by:
 receiver type + method name
@@ -74,13 +74,13 @@ func New(firstName, lastName, birthdate string) (*User, error) {
 		return nil, errors.New("Missing input.")
 	}
 
-	return &User{ 
+	return &User{
 		// In this example, it's not strictly necessary to return a pointer,
-		// but it's a convention, the idiomatic choice and scales well if User becomes more complex.		
+		// but it's a convention, the idiomatic choice and scales well if User becomes more complex.
 		// Returning a value copies this whole struct whenever it's returned or passed by value.
 		// Returning a pointer avoids those copies.
 		firstName: firstName,
-		lastName: lastName,
+		lastName:  lastName,
 		birthdate: birthdate,
 		createdAt: time.Now(),
 	}, nil

@@ -66,8 +66,8 @@ func main() {
 	courseGoals = append(courseGoals, "Learn all the basics!")
 	fmt.Println(courseGoals)
 	fmt.Println(cap(courseGoals))
-	// When append doesn't have enough capacity, it allocates a new underlying array. 
-	// Reassigning the slice variable makes it point to the new array; the old array 
+	// When append doesn't have enough capacity, it allocates a new underlying array.
+	// Reassigning the slice variable makes it point to the new array; the old array
 	// becomes eligible for garbage collection if no other references to it remain.
 
 	// 7)

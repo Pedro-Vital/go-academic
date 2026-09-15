@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 
 	ages := make(map[string]int) // declaration with make
-	// We can let Go know the expected length of the array or map for efficiency. 
+	// We can let Go know the expected length of the array or map for efficiency.
 	// To do that, we just pass the size argument for the make() function.
 
 	ages["Pedro"] = 25

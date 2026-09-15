@@ -10,8 +10,8 @@ import (
 )
 
 type Note struct {
-	Title string `json:"title"`
-	Content string `json:"content"`
+	Title     string    `json:"title"`
+	Content   string    `json:"content"`
 	CreatedAt time.Time `json:"created_at"`
 }
 
@@ -50,10 +50,10 @@ func New(title, content string) (Note, error) {
 	if title == "" || content == "" {
 		return Note{}, errors.New("title and content cannot be empty")
 	}
-	
+
 	return Note{
-		Title: title,
-		Content: content,
+		Title:     title,
+		Content:   content,
 		CreatedAt: time.Now(),
 	}, nil
 }

@@ -20,10 +20,10 @@ func main() {
 
 	for i := 1; i <= 50; i++ {
 		y = append(y, i)
-		fmt.Printf("Len: %v\n",len(y))
-		fmt.Printf("Cap: %v\n",cap(y))
-		// When append doesn't have enough capacity, it allocates a new underlying array. 
-		// Reassigning the slice variable makes it point to the new array; the old array 
+		fmt.Printf("Len: %v\n", len(y))
+		fmt.Printf("Cap: %v\n", cap(y))
+		// When append doesn't have enough capacity, it allocates a new underlying array.
+		// Reassigning the slice variable makes it point to the new array; the old array
 		// becomes eligible for garbage collection if no other references to it remain.
 	}
 

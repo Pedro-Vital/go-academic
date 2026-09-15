@@ -32,7 +32,7 @@ func New(content string) (Todo, error) {
 	if content == "" {
 		return Todo{}, errors.New("title and content cannot be empty")
 	}
-	
+
 	return Todo{
 		Text: content,
 	}, nil

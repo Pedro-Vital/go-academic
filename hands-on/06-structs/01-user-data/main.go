@@ -29,7 +29,7 @@ func main() {
 	// Go treats this as (&admin).ClearUserName().
 	// Go can implicitly take the address of an addressable value when calling a method with a pointer receiver.
 
-	appUser.OutputUserDetails() 
+	appUser.OutputUserDetails()
 	// appuser is a pointer and OutputUserDetails() is a value receiver.
 	// Go treats this as (*appUser).OutputUserDetails(). No need to dereference.
 	appUser.ClearUserName()

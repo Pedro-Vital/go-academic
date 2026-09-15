@@ -34,8 +34,9 @@ func transformNumbers(numbers *[]int, transform func(int) int) []int {
 func createTransformer(factor int) func(int) int {
 	return func(number int) int {
 		return number * factor
-		// factor is not a parameter of the anonymous function, 
+		// factor is not a parameter of the anonymous function,
 		// but of the outer function.
 	}
 }
+
 // This is a factory function

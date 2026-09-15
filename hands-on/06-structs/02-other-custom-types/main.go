@@ -12,7 +12,7 @@ type Altura float64
 type Peso float64
 
 func IMC(altura Altura, peso Peso) float64 {
-	return float64(peso) / float64(altura * altura)
+	return float64(peso) / float64(altura*altura)
 }
 
 func main() {

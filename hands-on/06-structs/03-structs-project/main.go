@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	title, content:= getNoteData()
+	title, content := getNoteData()
 
 	userNote, err := note.New(title, content)
 
@@ -30,7 +30,6 @@ func main() {
 	fmt.Println("Saving the note succeeded")
 }
 
-
 func getNoteData() (string, string) {
 	title := getUserInput("Note title:")
 
@@ -40,14 +39,14 @@ func getNoteData() (string, string) {
 }
 
 func getUserInput(prompt string) string {
-	fmt.Printf("%v ",prompt)
-	
+	fmt.Printf("%v ", prompt)
+
 	reader := bufio.NewReader(os.Stdin)
 	// The constructor is used to create a new reader that reads from the standard input
 
 	text, err := reader.ReadString('\n')
-	// We use the reader to read the string that was entered by the user. 
-	// ReadString wants to know at which byte it should stop reading, 
+	// We use the reader to read the string that was entered by the user.
+	// ReadString wants to know at which byte it should stop reading,
 	// '\n' in that case.
 	// to specify such a value, we need single quotes.
 	// this single *Unicode code point* value is a special value in Go called rune.
@@ -60,6 +59,5 @@ func getUserInput(prompt string) string {
 	text = strings.TrimSuffix(text, "\n")
 	text = strings.TrimSuffix(text, "\r") // Sometimes there is this special character too
 
-	
 	return text
 }
