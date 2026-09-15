@@ -28,6 +28,8 @@ func (fm FileManager) ReadLines() ([]string, error) {
 		return nil, errors.New("Failed to open file.")
 	}
 
+	defer file.Close()
+
 	scanner := bufio.NewScanner(file)
 	// bufio allow us to create a scanner, which is a value that exposes methods
 	// that can be used for reading content, e.g. from a file.
@@ -49,11 +51,11 @@ func (fm FileManager) ReadLines() ([]string, error) {
 	err = scanner.Err() // it will find out if a error occured earlier
 
 	if err != nil {
-		file.Close()
+		// file.Close()
 		return nil, errors.New("Failed to read line in file.")
 	}
 
-	file.Close()
+	// file.Close()
 	return lines, nil
 }
 
@@ -64,17 +66,19 @@ func (fm FileManager) WriteResult(data interface{}) error {
 		return errors.New("Failed to create file.")
 	}
 
+	defer file.Close()
+
 	encoder := json.NewEncoder(file)
 	// the encoder will be used to convert values to text that follows JSON format
 	// NewEncoder() accepts an interface which is implemented by the file type (*os.File)
 	err = encoder.Encode(data)
 
 	if err != nil {
-		file.Close()
+		// file.Close()
 		return errors.New("Faild to convert data to JSON.")
 	}
 
-	file.Close()
+	// file.Close()
 	return nil
 }
 
